@@ -31,15 +31,15 @@ Perfect for bridge clubs and tournament organizers who need a quick setup for pa
 
 ### Option 1: Use the Live Version
 
-Simply use the [live version](https://script.google.com/macros/s/AKfycbwJkzE_pqQb671gT_LD52CYaQ4F_vmYthFV20r6uOxyRRwxcq60IJ9ycoeR6dFW-n8OmA/exec) if you don't need to modify the code.
+Simply use the [live version](https://script.google.com/macros/s/AKfycbwJkzE_pqQb671gT_LD52CYaQ4F_vmYthFV20r6uOxyRRwxcq60IJ9ycoeR6dFW-n8OmA/exec) (version 6) if you don't need to modify the code.
 
 ### Option 2: Create Your Own Copy
 
 1. Create a new Google Apps Script project at [script.google.com](https://script.google.com)
 2. Copy the files from this repository:
-   - Create a script file named `Kode.js` (or `Code.js` if your environment defaults to English) and paste the JavaScript code
+   - Paste the JavaScript code into the default script file (called `Code.gs` in the Apps Script editor, or `Kode.gs` in Danish interfaces)
    - Create an HTML file named `index.html` and paste the HTML code
-   - **Important**: Do not replace your project's `appsscript.json` file
+   - **Note**: You can optionally replace the `appsscript.json` file, but it's not required
 3. Save the project (Ctrl+S or ⌘+S)
 4. Deploy as a web app:
    - Click **Deploy** → **New deployment**
