@@ -23,7 +23,6 @@ Perfect for bridge clubs and tournament organizers who need a quick setup for pa
   - DBF (Danish Bridge Federation) numbers 
   - Automatic pair counting
 - **Template Support**: Use an existing Google Form as a template to maintain custom styling
-- **Multilingual**: Works with both Danish and English Google Workspace interfaces
 - **Mobile-Friendly Interface**: Clean, responsive design with Bootstrap 4
 - **Detailed Instructions**: Help modals for finding IDs and publishing guides
 
