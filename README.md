@@ -1,7 +1,5 @@
 # Bridge Registration Creator
 
-![Bridge Registration Creator](https://i.imgur.com/EpzYFsU.png)
-
 A Google Apps Script web application for automatically generating registration forms for bridge tournaments with connected analysis spreadsheets.
 
 **[Live Demo](https://script.google.com/macros/s/AKfycbwJkzE_pqQb671gT_LD52CYaQ4F_vmYthFV20r6uOxyRRwxcq60IJ9ycoeR6dFW-n8OmA/exec)**
