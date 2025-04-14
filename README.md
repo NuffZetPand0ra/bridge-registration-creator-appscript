@@ -20,9 +20,10 @@ Perfect for bridge clubs and tournament organizers who need a quick setup for pa
 - **One-Click Form Generation**: Create forms with all necessary fields for bridge tournament registration
 - **Spreadsheet Analysis**: Automatically generates specialized sheets for:
   - Player names with timestamps
-  - DBF (Danish Bridge Federation) numbers 
+  - DBF (Danish Bridge Federation) numbers  
   - Automatic pair counting
 - **Template Support**: Use an existing Google Form as a template to maintain custom styling
+- **Danish Interface**: The application interface is entirely in Danish
 - **Mobile-Friendly Interface**: Clean, responsive design with Bootstrap 4
 - **Detailed Instructions**: Help modals for finding IDs and publishing guides
 
@@ -56,7 +57,7 @@ Simply use the [live version](https://script.google.com/macros/s/AKfycbwJkzE_pqQ
    - **Tournament date**: When the tournament will take place
    - **Google Drive folder ID**: Where to store the form and spreadsheet (see help modal)
    - **Form template ID** (optional): For using a custom design template
-3. Click **Opret tilmeldingsformular** (Create Registration Form)
+3. Click **Opret tilmeldingsformular** (Create Registration Form) - note that all buttons and labels are in Danish
 4. Share the generated links with participants and tournament managers
 
 ## 💻 Technical Details
@@ -64,7 +65,8 @@ Simply use the [live version](https://script.google.com/macros/s/AKfycbwJkzE_pqQ
 - **Frontend**: HTML, CSS (Bootstrap 4), JavaScript, Handlebars.js
 - **Backend**: Google Apps Script (JavaScript)
 - **APIs Used**: Google Forms API, Google Sheets API, Google Drive API
-- **Dependencies**: 
+- **Language**: Danish UI with some English code comments
+- **Dependencies**:  
   - Bootstrap 4.5.2
   - jQuery 3.5.1
   - Handlebars 4.7.7
@@ -82,7 +84,7 @@ Contributions are more than welcome! To contribute:
 
 ### Improvement Ideas
 
-- Add support for more languages
+- Add support for more languages (currently Danish only)
 - Create custom branding options
 - Add more analysis sheet types
 - Implement user preferences storage
