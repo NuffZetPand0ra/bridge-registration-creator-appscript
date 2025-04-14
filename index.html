@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <title>Bridge Registration Creator</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      .help-icon {
+        cursor: pointer;
+        font-size: 0.9em;
+        transition: color 0.3s ease;
+      }
+      .help-icon:hover {
+        color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h2 class="mb-4">Bridge Registration Creator</h2>
+      <form id="tilmeldingForm">
+        <div class="row">
+          <!-- Tournament Information Column -->
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="far fa-calendar-alt mr-2"></i>Turnerings Information</h5>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="titel">Arrangementets titel:</label>
+                  <input type="text" class="form-control" id="titel" name="titel" required>
+                </div>
+                <div class="form-group">
+                  <label for="dato">Arrangementets dato:</label>
+                  <input type="date" class="form-control" id="dato" name="dato" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Google Drive Details Column -->
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fab fa-google-drive mr-2"></i>Google Drive Information</h5>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="folderId">
+                    Google Drive mappe-ID:
+                    <i class="fas fa-question-circle text-info ml-1 help-icon" data-toggle="modal" data-target="#folderIdHelpModal"></i>
+                  </label>
+                  <input type="text" class="form-control" id="folderId" name="folderId" required>
+                </div>
+                <div class="form-group">
+                  <label for="templateId">
+                    Form Template ID (valgfrit):
+                    <i class="fas fa-question-circle text-info ml-1 help-icon" data-toggle="modal" data-target="#templateIdHelpModal"></i>
+                  </label>
+                  <input type="text" class="form-control" id="templateId" name="templateId">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Submit Button (centered) -->
+        <div class="text-center mb-4">
+          <button type="submit" class="btn btn-primary btn-lg">Opret tilmeldingsformular</button>
+        </div>
+      </form>
+      
+      <!-- Help Modals -->
+      <!-- Folder ID Help Modal -->
+      <div class="modal fade" id="folderIdHelpModal" tabindex="-1" role="dialog" aria-labelledby="folderIdHelpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-info text-white">
+              <h5 class="modal-title" id="folderIdHelpModalLabel"><i class="fas fa-info-circle mr-2"></i>Sådan finder du Google Drive mappe-ID</h5>
+              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>For at finde ID'et på en Google Drive mappe, følg disse trin:</p>
+              <ol>
+                <li>Åbn <a href="https://drive.google.com" target="_blank">Google Drive</a>.</li>
+                <li>Naviger til den mappe, hvor du vil gemme tilmeldingsformularen og svararket.</li>
+                <li>Se nu på URL'en i adresselinjen. Mappe-ID'et er den lange streng af tegn efter "folders/" i URL'en.</li>
+              </ol>
+              <div class="alert alert-secondary">
+                <p><strong>Eksempel:</strong></p>
+                <p>Hvis URL'en er: <code>https://drive.google.com/drive/folders/1aBcDeFgHiJkLmNoPqRsTuVwXyZ</code></p>
+                <p>Så er mappe-ID'et: <code>1aBcDeFgHiJkLmNoPqRsTuVwXyZ</code></p>
+              </div>
+              <div class="alert alert-warning">
+                <p><strong>Bemærk:</strong> Du skal have oprettet mappen på forhånd, og du skal have rettigheder til at oprette filer i den.</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Luk</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Template ID Help Modal -->
+      <div class="modal fade" id="templateIdHelpModal" tabindex="-1" role="dialog" aria-labelledby="templateIdHelpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-info text-white">
+              <h5 class="modal-title" id="templateIdHelpModalLabel"><i class="fas fa-info-circle mr-2"></i>Om formular-skabeloner</h5>
+              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5>Hvad er en formular-skabelon?</h5>
+              <p>En formular-skabelon er en eksisterende Google Form, som du kan bruge som udgangspunkt for nye tilmeldingsformularer. Dette er nyttigt, hvis du ønsker at have bestemte tema-indstillinger, tilpasset udseende, eller standardbeskrivelser.</p>
+              
+              <div class="alert alert-danger">
+                <p><strong>VIGTIGT om e-mail indsamling:</strong></p>
+                <ul>
+                  <li>Sørg for at <strong>skabelonen IKKE</strong> er konfigureret til at indsamle e-mailadresser.</li>
+                  <li>Hvis skabelonen indsamler e-mails, vil disse blive synlige i analyse-arkene, som kan blive offentliggjort.</li>
+                  <li>Dette udgør en potentiel overtrædelse af persondataloven (GDPR), da e-mailadresser er personhenførbare oplysninger.</li>
+                </ul>
+                <p>For at tjekke: Åbn din formular-skabelon, klik på fanen <strong>Indstillinger</strong>, åbn <strong>Svar</strong> blokken og sørg for at <em>Indhendt mailadresser</em> er sat til <em>Indsaml ikke</em>.</p>
+                <p><strong>Bemærk:</strong> Du kan vælge at aktivere e-mail-indsamling <em>efter</em> formularen er oprettet, hvis du har behov for det. Dette gøres ved at redigere den oprettede formular.</p>
+              </div>
+              
+              <div class="alert alert-warning">
+                <p><strong>Vigtig information om brug af skabeloner:</strong></p>
+                <ul>
+                  <li><strong>Din skabelon påvirkes ikke</strong> - den originale skabelon forbliver uændret.</li>
+                  <li><strong>I den nye formular</strong> vil alle eksisterende felter blive erstattet med de påkrævede bridge-tilmeldingsfelter.</li>
+                  <li>Skabelonens design, tema, beskrivelse og indstillinger vil blive kopieret over til den nye formular.</li>
+                </ul>
+              </div>
+              
+              <h5>Sådan bruger du en skabelon:</h5>
+              <ol>
+                <li>Opret en Google Form med det ønskede udseende og beskrivelse.</li>
+                <li>Find denne forms ID (se nedenfor).</li>
+                <li>Indtast ID'et i feltet "Form Template ID" i denne app.</li>
+              </ol>
+              
+              <h5>Sådan finder du ID'et på en Google Form:</h5>
+              <ol>
+                <li>Åbn den Google Form, du vil bruge som skabelon.</li>
+                <li>Se på URL'en i adresselinjen. Form-ID'et er den lange streng af tegn mellem "/forms/d/" og "/edit" i URL'en.</li>
+              </ol>
+              
+              <div class="alert alert-secondary">
+                <p><strong>Eksempel:</strong></p>
+                <p>Hvis URL'en er: <code>https://docs.google.com/forms/d/1aBcDeFgHiJkLmNoPqRsTuVwXyZ/edit</code></p>
+                <p>Så er form-ID'et: <code>1aBcDeFgHiJkLmNoPqRsTuVwXyZ</code></p>
+              </div>
+              
+              <div class="alert alert-info">
+                <p><strong>Bemærk:</strong> Denne funktion er valgfri. Hvis du ikke angiver et skabelon-ID, vil systemet oprette en standardformular med de nødvendige felter.</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Luk</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Enhanced notification div with Bootstrap loading spinner -->
+      <div id="notification" class="mt-4 d-none">
+        <div class="alert alert-info d-flex align-items-center" role="alert">
+          <div class="spinner-border text-info mr-3" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div>
+            Behandler din anmodning... Vent venligst.
+          </div>
+        </div>
+      </div>
+      
+      <!-- Result div where the links and instructions will be shown -->
+      <div id="resultat" class="mt-4"></div>
+      
+      <!-- Footer with developer information -->
+      <footer class="mt-5 pt-4 border-top text-center text-muted">
+        <small>
+          <p>Udviklet og vedligeholdt af Esben Tind <a href="mailto:turnering@ballerupbridge.dk">turnering@ballerupbridge.dk</a></p>
+        </small>
+      </footer>
+    </div>
+    
+    <!-- Handlebars template for the result -->
+    <script id="result-template" type="text/x-handlebars-template">
+      <h3 class="text-success mb-3">Tilmeldingsformularen er oprettet!</h3>
+      <div class="mb-3">
+        <label for="formLinkInput"><strong>Link til formularen:</strong></label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="formLinkInput" value="{{formLink}}" readonly>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="copyFormLinkBtn" data-toggle="popover">Kopier</button>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-info" type="button" onclick="window.open('{{formEditLink}}', '_blank')">
+          <i class="fas fa-edit mr-2"></i>Rediger formularen
+        </button>
+        <div class="alert alert-info mt-2">
+          <i class="fas fa-lightbulb mr-2"></i><strong>Tilpasning af formularen:</strong>
+          <ul class="mb-0 mt-1">
+            <li>Du kan tilføje flere spørgsmål såsom telefonnummer, kost-ønsker, eller andre relevante informationer.</li>
+            <li>Du kan også ændre rækkefølgen af spørgsmålene efter behov.</li>
+            <li><strong>Vigtigt:</strong> Slet ikke de eksisterende felter (navn og DBF-numre), da de er nødvendige for analysearkene.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mb-3">
+        <strong>Svararket (spreadsheet med tilmeldingerne):</strong><br>
+        <button class="btn btn-success" type="button" onclick="window.open('https://docs.google.com/spreadsheets/d/{{spreadsheetId}}/edit?usp=sharing', '_blank')">
+          <i class="fas fa-table mr-2"></i>Åbn svararket
+        </button>
+      </div>
+      <div class="mt-4 p-3 border">
+        <h3>Sådan udgiver du svararket til nettet:</h3>
+        <p>Hvis du ønsker at dele de tilmeldtes navne på nettet, skal du offentliggøre den del af regnearket der indeholder navnene.</p>
+        <ol>
+          <li>Åbn svararket ved at klikke på knappen <strong>Åbn svararket</strong> ovenfor. Det åbner i en ny fane.</li>
+          <li>Klik på <strong>Fil</strong> i øverste venstre hjørne af regnearket.</li>
+          <li>Hold musen over <strong>Del</strong> i menuen og klik derefter på <strong>Udgiv på nettet</strong>.</li>
+          <li>I dialogboksen, klik på den dropdrown hvor det står <em>Hele dokumentet</em> og vælg <em>Spillernavne</em> i stedet.</li>
+          <li>Klik på <strong>Offentliggør</strong>.</li>
+          <li>Klik OK til at offentliggøre dette valg.</li>
+          <li>Kopier det genererede link, som du nu kan dele med offentligheden.</li>
+        </ol>
+      </div>
+    </script>
+    
+    <!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Handlebars.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+    
+    <script>
+      $(document).ready(function() {
+        // Initialize any Bootstrap tooltips and popovers
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
+        
+        // Make help icons more interactive
+        $('.help-icon').hover(
+          function() { $(this).addClass('fa-lg'); },
+          function() { $(this).removeClass('fa-lg'); }
+        );
+        
+        $('#tilmeldingForm').on('submit', function(e) {
+          e.preventDefault();
+          
+          // Show loading spinner and alert
+          $('#notification').removeClass('d-none');
+          $('#resultat').html("");
+        
+          var data = {
+            titel: $('#titel').val(),
+            dato: $('#dato').val(),
+            folderId: $('#folderId').val(),
+            templateId: $('#templateId').val()
+          };
+        
+          google.script.run
+            .withSuccessHandler(function(result) {
+              // Hide loading spinner
+              $('#notification').addClass('d-none');
+        
+              // Compile the Handlebars template
+              var source = $('#result-template').html();
+              var template = Handlebars.compile(source);
+        
+              // Generate the HTML using the template and result data
+              var html = template(result);
+        
+              // Insert the generated HTML into the resultat div
+              $('#resultat').html(html);
+              
+              // Scroll to the result section using native JavaScript
+              document.getElementById('resultat').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+
+
+              // Initialize popover on the copy button
+              $("#copyFormLinkBtn").popover({
+                content: "Kopieret!",
+                placement: "top",
+                trigger: "manual"
+              });
+        
+              // Add event listener to the copy button
+              $('#copyFormLinkBtn').on('click', function() {
+                var copyBtn = $(this);
+                copyBtn.text("Kopieret");
+                
+                var copyText = $('#formLinkInput');
+                copyText.select();
+                copyText[0].setSelectionRange(0, 99999); // For mobile devices
+                navigator.clipboard.writeText(copyText.val());
+              });
+            })
+            .withFailureHandler(function(error) {
+              // Hide loading spinner
+              $('#notification').addClass('d-none');
+              $('#resultat').html("<div class='alert alert-danger' role='alert'>Fejl: " + error.message + "</div>");
+            })
+            .createBridgeRegistration(data);
+        });
+      });
+    </script>
+  </body>
+</html>
