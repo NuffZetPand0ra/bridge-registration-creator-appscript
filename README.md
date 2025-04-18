@@ -2,7 +2,7 @@
 
 A Google Apps Script web application for automatically generating registration forms for bridge tournaments with connected analysis spreadsheets.
 
-**[Live Demo](https://script.google.com/macros/s/AKfycbwJkzE_pqQb671gT_LD52CYaQ4F_vmYthFV20r6uOxyRRwxcq60IJ9ycoeR6dFW-n8OmA/exec)**
+**[Live Demo](https://link.ballerupbridge.dk/bridge-registration-creator-latest)**
 
 ## 🎯 Purpose
 
@@ -31,7 +31,7 @@ Perfect for bridge clubs and tournament organizers who need a quick setup for pa
 
 ### Option 1: Use the Live Version
 
-Simply use the [live version](https://script.google.com/macros/s/AKfycbwJkzE_pqQb671gT_LD52CYaQ4F_vmYthFV20r6uOxyRRwxcq60IJ9ycoeR6dFW-n8OmA/exec) (version 6) if you don't need to modify the code.
+Simply use the [live version](https://link.ballerupbridge.dk/bridge-registration-creator-latest) (version 6) if you don't need to modify the code.
 
 ### Option 2: Create Your Own Copy
 
